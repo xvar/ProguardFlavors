@@ -1,13 +1,20 @@
 package com.example.proguardflavors.impl
 
-import android.os.Build
+import android.app.Application
+import com.example.proguardflavors.BuildConfig
 import com.example.proguardflavors.iface.AdvertisingIdProvider
-import java.lang.NullPointerException
 
-class AdvertisingIdProviderFactory {
+class AdvertisingIdProviderFactory(
+    private val app: Application
+) {
 
-    fun getAdvertisingIdProvider() : AdvertisingIdProvider {
-        throw NullPointerException()
+    fun get() : AdvertisingIdProvider {
+        return when(BuildConfig.FLAVOR) {
+            "google" -> GoogleAdvertIdProvider(app)
+            "huawei" -> HuaweiIdProvider(app)
+            else -> throw IllegalStateException("not known flavor!")
+
+        }
     }
 
 }

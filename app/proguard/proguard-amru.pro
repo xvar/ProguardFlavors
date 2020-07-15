@@ -48,11 +48,6 @@
 #To understand or change this check http://proguard.sourceforge.net/index.html#/manual/optimizations.html
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*,!code/allocation/variable
 
--dump class_files.txt
--printseeds seeds.txt
--printusage unused.txt
--printmapping mapping.txt
-
 #To repackage classes on a single package
 #-repackageclasses ''
 

@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.huawei.agconnect'
 }
 //apply plugin: 'com.google.gms.google-services'
 
@@ -48,8 +49,12 @@ android {
 }
 
 dependencies {
-    //check for id (simplest one
+    //check for advertising-id (simplest one)
     implementation 'com.google.android.gms:play-services-ads:18.3.0'
+    //huawei
+
+    implementation 'com.huawei.hms:ads-identifier:3.4.28.313'
+    implementation 'com.huawei.hms:ads-lite:13.4.30.301'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.0'
